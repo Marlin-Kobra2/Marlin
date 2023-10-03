@@ -123,13 +123,8 @@ extern "C" void usart_rx_irq_hook(uint8_t ch, uint8_t usart);
 #define digitalPinHasPWM(P) (P) //(PIN_MAP[P].timer_device != nullptr)
 #endif
 
-#define CRITICAL_SECTION_START        \
-  uint32_t primask = __get_PRIMASK(); \
-  (void)__iCliRetVal()
-
-#define CRITICAL_SECTION_END \
-  if (!primask)              \
-  (void)__iSeiRetVal()
+#define CRITICAL_SECTION_START() NOOP
+#define CRITICAL_SECTION_END()   NOOP
 
 // Disable interrupts
 #define cli() noInterrupts()
