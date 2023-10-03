@@ -133,7 +133,11 @@ void MarlinHAL::init()
     ChipTemperature.setMinimumReadDeltaMillis(1000);
 }
 
-void MarlinHAL::init_board() {}
+void MarlinHAL::init_board() {
+#if PIN_EXISTS(POWER_CTRL)
+    OUT_WRITE(POWER_CTRL_PIN, 1);
+#endif
+}
 
 void MarlinHAL::reboot()
 {
