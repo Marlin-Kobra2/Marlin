@@ -150,7 +150,7 @@
 //
 // Fans
 //
-#define FAN0_PIN                            PB7     // model fan
+#define FAN0_PIN                            PB9     // model fan
 #define FAN1_PIN                            PA13    // auto fan for E0
 #define FAN2_PIN                            PA14    // controller fan
 #define CONTROLLER_FAN_PIN                  FAN2_PIN
