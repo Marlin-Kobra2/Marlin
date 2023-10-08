@@ -153,6 +153,13 @@ extern "C" void usart_rx_irq_hook(uint8_t ch, uint8_t usart);
 #define JTAGSWD_DISABLE() // afio_cfg_debug_ports(AFIO_DEBUG_NONE)
 
 //
+// Tone
+//
+void tone(const gpio_pin_t _pin, const unsigned int frequency, const unsigned long duration);
+void noTone(const gpio_pin_t _pin);
+
+
+//
 // MarlinHAL implementation
 //
 #include "MarlinHAL.h"
